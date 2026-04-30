@@ -8,8 +8,8 @@
     },
 
     /* Environment Settings */
-    "module": "NodeNext", // Backend/Fastify ke liye NodeNext behtar hai
-    "moduleResolution": "NodeNext",
+    "module": "esnext", // Backend/Fastify ke liye NodeNext behtar hai
+    "moduleResolution": "bundler",
     "target": "es2023",
     "esModuleInterop": true,
     "skipLibCheck": true,
