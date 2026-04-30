@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* File Layout */
+    "rootDir": "./src", // Bata raha hai ke source code kahan hai
+    "outDir": "./dist", // Bata raha hai ke compiled files kahan jayengi
+    "paths": {
+      "@/*": ["./src/*"] // Optional: paths simplify karne ke liye
+    },
+
+    /* Environment Settings */
+    "module": "NodeNext", // Backend/Fastify ke liye NodeNext behtar hai
+    "moduleResolution": "NodeNext",
+    "target": "es2023",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Output Settings */
+    "sourceMap": true, // Debugging ke liye
+    "declaration": true, // Types generate karne ke liye
+    "declarationMap": true,
+
+    /* Strictness (Aapne false rakha hai, isliye wahi rehne diya) */
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+
+    /* Additional Recommended Options */
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleDetection": "force"
+  },
+  "include": ["src/**/*"], // Sirf src folder ki files compile karega
+  "exclude": ["node_modules", "dist", "generated"]
+}
