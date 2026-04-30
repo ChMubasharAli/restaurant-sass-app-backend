@@ -4,7 +4,7 @@ import {
   ValidationError,
   ConflictError,
 } from "../utils/errors.js";
-import { ReservationStatus } from "../../generated/prisma/enums";
+import { ReservationStatus } from "../../generated/prisma/enums.js";
 export class ReservationService {
   reservationRepository;
   constructor() {
