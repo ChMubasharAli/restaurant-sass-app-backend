@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     /* File Layout */
-    "rootDir": "./src", // Bata raha hai ke source code kahan hai
+    "rootDir": "./", // Bata raha hai ke source code kahan hai
     "outDir": "./dist", // Bata raha hai ke compiled files kahan jayengi
     "paths": {
       "@/*": ["./src/*"] // Optional: paths simplify karne ke liye
@@ -30,6 +30,6 @@
     "isolatedModules": true,
     "moduleDetection": "force"
   },
-  "include": ["src/**/*"], // Sirf src folder ki files compile karega
+  "include": ["src/**/*", "generated/**/*"],
   "exclude": ["node_modules", "dist", "generated"]
 }
