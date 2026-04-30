@@ -1,4 +1,4 @@
-import { config } from "./index";
+import { config } from "./index.js";
 
 export const authorizeNetConfig = {
   apiLoginId: config.authorizeNet.apiLoginId,
