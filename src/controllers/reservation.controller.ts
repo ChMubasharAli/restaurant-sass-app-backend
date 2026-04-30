@@ -1,11 +1,11 @@
 import type { Request, Response } from "express";
-import { ReservationService } from "../services/reservation.service";
+import { ReservationService } from "../services/reservation.service.js";
 import {
   createReservationSchema,
   updateReservationStatusSchema,
-} from "../validators/reservation.validator";
-import { ValidationError } from "../utils/errors";
-import { getAvailableTimeSlots } from "../utils/time-slots";
+} from "../validators/reservation.validator.js";
+import { ValidationError } from "../utils/errors.js";
+import { getAvailableTimeSlots } from "../utils/time-slots.js";
 
 export class ReservationController {
   private reservationService: ReservationService;

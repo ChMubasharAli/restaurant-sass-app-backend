@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { RestaurantService } from "../services/restaurant.service";
-import { updateRestaurantSettingsSchema } from "../validators/restaurant.validator";
-import { ValidationError } from "../utils/errors";
+import { RestaurantService } from "../services/restaurant.service.js";
+import { updateRestaurantSettingsSchema } from "../validators/restaurant.validator.js";
+import { ValidationError } from "../utils/errors.js";
 
 export class RestaurantController {
   private restaurantService: RestaurantService;

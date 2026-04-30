@@ -1,9 +1,9 @@
-import { AdminRepository } from "../repositories/admin.repository";
+import { AdminRepository } from "../repositories/admin.repository.js";
 import {
   NotFoundError,
   ValidationError,
   UnauthorizedError,
-} from "../utils/errors";
+} from "../utils/errors.js";
 import * as crypto from "crypto";
 
 export class AdminService {

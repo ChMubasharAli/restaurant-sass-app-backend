@@ -1,6 +1,6 @@
 import type { CreateCategoryDTO, UpdateCategoryDTO } from "../dto/menu.dto";
-import { CategoryRepository } from "../repositories/category.repository";
-import { NotFoundError, ConflictError } from "../utils/errors";
+import { CategoryRepository } from "../repositories/category.repository.js";
+import { NotFoundError, ConflictError } from "../utils/errors.js";
 
 export class CategoryService {
   private categoryRepository: CategoryRepository;

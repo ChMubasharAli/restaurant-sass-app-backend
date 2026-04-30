@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { RestaurantController } from "../controllers/restaurant.controller";
-import { asyncHandler } from "../utils/async-handler";
+import { RestaurantController } from "../controllers/restaurant.controller.js";
+import { asyncHandler } from "../utils/async-handler.js";
 
 const router = Router();
 const restaurantController = new RestaurantController();

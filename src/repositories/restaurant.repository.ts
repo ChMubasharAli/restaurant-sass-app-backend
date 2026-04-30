@@ -1,5 +1,5 @@
 import type { UpdateRestaurantSettingsDTO } from "../dto/restaurant.dto";
-import { BaseRepository } from "./base.repository";
+import { BaseRepository } from "./base.repository.js";
 
 export class RestaurantRepository extends BaseRepository {
   async getSettings() {

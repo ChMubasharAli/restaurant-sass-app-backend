@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { restaurantRoutes } from "./restaurant.routes";
-import { categoryRoutes } from "./category.routes";
-import { menuItemRoutes } from "./menu-item.routes";
-import { orderRoutes } from "./order.routes";
-import { reservationRoutes } from "./reservation.routes";
-import { dashboardRoutes } from "./dashboard.routes";
-import { transactionRoutes } from "./transaction.routes";
-import { paymentRoutes } from "./payment.routes";
-import { adminRoutes } from "./admin.routes";
+import { restaurantRoutes } from "./restaurant.routes.js";
+import { categoryRoutes } from "./category.routes.js";
+import { menuItemRoutes } from "./menu-item.routes.js";
+import { orderRoutes } from "./order.routes.js";
+import { reservationRoutes } from "./reservation.routes.js";
+import { dashboardRoutes } from "./dashboard.routes.js";
+import { transactionRoutes } from "./transaction.routes.js";
+import { paymentRoutes } from "./payment.routes.js";
+import { adminRoutes } from "./admin.routes.js";
 
 const router = Router();
 

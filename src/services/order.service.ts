@@ -1,10 +1,9 @@
-import { OrderRepository } from "../repositories/order.repository";
-import { MenuItemRepository } from "../repositories/menu-item.repository";
-import { RestaurantRepository } from "../repositories/restaurant.repository";
-import type { CreateOrderDTO } from "../dto/order.dto";
-import { NotFoundError, ValidationError } from "../utils/errors";
-import { BaseRepository } from "../repositories/base.repository";
-import prisma from "../config/database";
+import { OrderRepository } from "../repositories/order.repository.js";
+import { MenuItemRepository } from "../repositories/menu-item.repository.js";
+import { RestaurantRepository } from "../repositories/restaurant.repository.js";
+import type { CreateOrderDTO } from "../dto/order.dto.js";
+import { NotFoundError, ValidationError } from "../utils/errors.js";
+import prisma from "../config/database.js";
 
 export class OrderService {
   private orderRepository: OrderRepository;

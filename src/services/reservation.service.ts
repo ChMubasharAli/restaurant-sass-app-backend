@@ -1,7 +1,11 @@
-import { ReservationRepository } from "../repositories/reservation.repository";
-import type { CreateReservationDTO } from "../dto/reservation.dto";
-import { NotFoundError, ValidationError, ConflictError } from "../utils/errors";
-import { ReservationStatus } from "../../generated/prisma/enums";
+import { ReservationRepository } from "../repositories/reservation.repository.js";
+import type { CreateReservationDTO } from "../dto/reservation.dto.js";
+import {
+  NotFoundError,
+  ValidationError,
+  ConflictError,
+} from "../utils/errors.js";
+import { ReservationStatus } from "../../generated/prisma/enums.js";
 
 export class ReservationService {
   private reservationRepository: ReservationRepository;

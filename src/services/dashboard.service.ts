@@ -1,6 +1,6 @@
-import { OrderRepository } from "../repositories/order.repository";
-import { ReservationRepository } from "../repositories/reservation.repository";
-import { RestaurantRepository } from "../repositories/restaurant.repository";
+import { OrderRepository } from "../repositories/order.repository.js";
+import { ReservationRepository } from "../repositories/reservation.repository.js";
+import { RestaurantRepository } from "../repositories/restaurant.repository.js";
 
 export class DashboardService {
   private orderRepository: OrderRepository;

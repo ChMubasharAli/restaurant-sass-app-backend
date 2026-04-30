@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { PaymentService } from "../services/payment.service";
-import { OrderService } from "../services/order.service";
-import { ValidationError } from "../utils/errors";
+import { PaymentService } from "../services/payment.service.js";
+import { OrderService } from "../services/order.service.js";
+import { ValidationError } from "../utils/errors.js";
 
 export class PaymentController {
   private paymentService: PaymentService;

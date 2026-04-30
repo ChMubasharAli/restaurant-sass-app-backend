@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { DashboardController } from "../controllers/dashboard.controller";
-import { asyncHandler } from "../utils/async-handler";
+import { DashboardController } from "../controllers/dashboard.controller.js";
+import { asyncHandler } from "../utils/async-handler.js";
 
 const router = Router();
 const dashboardController = new DashboardController();

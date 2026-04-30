@@ -1,10 +1,10 @@
 import type { Request, Response } from "express";
-import { MenuItemService } from "../services/menu-item.service";
+import { MenuItemService } from "../services/menu-item.service.js";
 import {
   createMenuItemSchema,
   updateMenuItemSchema,
-} from "../validators/menu.validator";
-import { ValidationError } from "../utils/errors";
+} from "../validators/menu.validator.js";
+import { ValidationError } from "../utils/errors.js";
 
 export class MenuItemController {
   private menuItemService: MenuItemService;

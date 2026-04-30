@@ -1,13 +1,11 @@
 import { z } from "zod";
-import { VALID_TIME_SLOTS } from "../utils/time-slots";
+import { VALID_TIME_SLOTS } from "../utils/time-slots.js";
 export const createReservationSchema = z.object({
   reservationDate: z.string().datetime("Invalid date format"),
-  timeSlot: z
-    .string()
-    .refine((val) => VALID_TIME_SLOTS.includes(val), {
-      message:
-        "Invalid time slot. Must be one of: " + VALID_TIME_SLOTS.join(", "),
-    }),
+  timeSlot: z.string().refine((val) => VALID_TIME_SLOTS.includes(val), {
+    message:
+      "Invalid time slot. Must be one of: " + VALID_TIME_SLOTS.join(", "),
+  }),
   numberOfGuests: z
     .number()
     .int()

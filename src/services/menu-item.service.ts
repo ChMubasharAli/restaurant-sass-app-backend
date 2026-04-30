@@ -1,6 +1,6 @@
-import type { CreateMenuItemDTO, UpdateMenuItemDTO } from "../dto/menu.dto";
-import { MenuItemRepository } from "../repositories/menu-item.repository";
-import { NotFoundError, ValidationError } from "../utils/errors";
+import type { CreateMenuItemDTO, UpdateMenuItemDTO } from "../dto/menu.dto.js";
+import { MenuItemRepository } from "../repositories/menu-item.repository.js";
+import { NotFoundError, ValidationError } from "../utils/errors.js";
 
 export class MenuItemService {
   private menuItemRepository: MenuItemRepository;

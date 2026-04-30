@@ -1,4 +1,4 @@
-import { BaseRepository } from "./base.repository";
+import { BaseRepository } from "./base.repository.js";
 import type { CreateReservationDTO } from "../dto/reservation.dto";
 
 export class ReservationRepository extends BaseRepository {

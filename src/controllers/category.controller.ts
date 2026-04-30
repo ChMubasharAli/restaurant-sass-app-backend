@@ -1,10 +1,10 @@
 import type { Request, Response } from "express";
-import { CategoryService } from "../services/category.service";
+import { CategoryService } from "../services/category.service.js";
 import {
   createCategorySchema,
   updateCategorySchema,
-} from "../validators/menu.validator";
-import { ValidationError } from "../utils/errors";
+} from "../validators/menu.validator.js";
+import { ValidationError } from "../utils/errors.js";
 
 type CategoryParams = {
   id: string;

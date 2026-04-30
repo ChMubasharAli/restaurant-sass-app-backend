@@ -1,5 +1,5 @@
 import AuthorizeNet from "authorizenet";
-import { TransactionService } from "./transaction.service";
+import { TransactionService } from "./transaction.service.js";
 import { authorizeNetConfig } from "../config/authorize-net.config";
 
 const { APIContracts, APIControllers } = AuthorizeNet;

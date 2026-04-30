@@ -1,4 +1,4 @@
-import { BaseRepository } from "./base.repository";
+import { BaseRepository } from "./base.repository.js";
 
 export class AdminRepository extends BaseRepository {
   async findByUsername(username: string) {

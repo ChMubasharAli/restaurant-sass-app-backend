@@ -1,12 +1,12 @@
 import type { Request, Response } from "express";
-import { OrderService } from "../services/order.service";
-import { DistanceService } from "../services/distance.service";
-import { RestaurantService } from "../services/restaurant.service";
+import { OrderService } from "../services/order.service.js";
+import { DistanceService } from "../services/distance.service.js";
+import { RestaurantService } from "../services/restaurant.service.js";
 import {
   createOrderSchema,
   updateOrderStatusSchema,
-} from "../validators/order.validator";
-import { ValidationError } from "../utils/errors";
+} from "../validators/order.validator.js";
+import { ValidationError } from "../utils/errors.js";
 
 export class OrderController {
   private orderService: OrderService;

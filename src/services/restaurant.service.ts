@@ -1,7 +1,7 @@
-import type { UpdateRestaurantSettingsInput } from "../validators/restaurant.validator";
-import { RestaurantRepository } from "../repositories/restaurant.repository";
+import type { UpdateRestaurantSettingsInput } from "../validators/restaurant.validator.js";
+import { RestaurantRepository } from "../repositories/restaurant.repository.js";
 
-import { NotFoundError } from "../utils/errors";
+import { NotFoundError } from "../utils/errors.js";
 
 export class RestaurantService {
   private restaurantRepository: RestaurantRepository;

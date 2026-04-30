@@ -1,5 +1,5 @@
 import type { CreateCategoryDTO, UpdateCategoryDTO } from "../dto/menu.dto";
-import { BaseRepository } from "./base.repository";
+import { BaseRepository } from "./base.repository.js";
 
 export class CategoryRepository extends BaseRepository {
   async findAll() {

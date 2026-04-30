@@ -1,10 +1,10 @@
 import type { Request, Response } from "express";
-import { AdminService } from "../services/admin.service";
+import { AdminService } from "../services/admin.service.js";
 import {
   adminLoginSchema,
   changePasswordSchema,
-} from "../validators/admin.validator";
-import { ValidationError } from "../utils/errors";
+} from "../validators/admin.validator.js";
+import { ValidationError } from "../utils/errors.js";
 
 export class AdminController {
   private adminService: AdminService;

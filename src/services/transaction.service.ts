@@ -1,4 +1,4 @@
-import { TransactionRepository } from "../repositories/transaction.repository";
+import { TransactionRepository } from "../repositories/transaction.repository.js";
 
 export class TransactionService {
   private transactionRepository: TransactionRepository;

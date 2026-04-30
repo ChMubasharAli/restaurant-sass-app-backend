@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { ReservationController } from "../controllers/reservation.controller";
-import { asyncHandler } from "../utils/async-handler";
+import { ReservationController } from "../controllers/reservation.controller.js";
+import { asyncHandler } from "../utils/async-handler.js";
 
 const router = Router();
 const reservationController = new ReservationController();

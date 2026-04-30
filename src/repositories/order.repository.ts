@@ -1,4 +1,4 @@
-import { BaseRepository } from "./base.repository";
+import { BaseRepository } from "./base.repository.js";
 import type { CreateOrderDTO, UpdateOrderStatusDTO } from "../dto/order.dto";
 
 export class OrderRepository extends BaseRepository {

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { AdminController } from "../controllers/admin.controller";
-import { asyncHandler } from "../utils/async-handler";
+import { AdminController } from "../controllers/admin.controller.js";
+import { asyncHandler } from "../utils/async-handler.js";
 
 const router = Router();
 const adminController = new AdminController();
