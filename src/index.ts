@@ -2,7 +2,7 @@ import { app } from "./app.js";
 import { config } from "./config/index.js";
 
 // For local development
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "development") {
   const start = async () => {
     try {
       app.listen(config.port, () => {

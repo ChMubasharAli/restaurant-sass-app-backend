@@ -1,4 +1,4 @@
-import type { CreateCategoryDTO, UpdateCategoryDTO } from "../dto/menu.dto";
+import type { CreateCategoryDTO, UpdateCategoryDTO } from "../dto/menu.dto.js";
 import { CategoryRepository } from "../repositories/category.repository.js";
 import { NotFoundError, ConflictError } from "../utils/errors.js";
 
