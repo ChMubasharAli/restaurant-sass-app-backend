@@ -1,6 +1,7 @@
 import { ReservationRepository } from "../repositories/reservation.repository";
 import type { CreateReservationDTO } from "../dto/reservation.dto";
 import { NotFoundError, ValidationError, ConflictError } from "../utils/errors";
+import { ReservationStatus } from "../../generated/prisma/enums";
 
 export class ReservationService {
   private reservationRepository: ReservationRepository;
@@ -71,7 +72,7 @@ export class ReservationService {
   async cancelReservation(id: number) {
     const reservation = await this.getReservationById(id);
 
-    if (reservation.status === "COMPLETED") {
+    if (reservation.status === ReservationStatus.ACCEPTED) {
       throw new ValidationError("Cannot cancel a completed reservation");
     }
 

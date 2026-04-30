@@ -102,7 +102,10 @@ export class OrderService {
     }
 
     // Update order status
-    const updatedOrder = await this.orderRepository.updateStatus(id, status);
+    const updatedOrder = await this.orderRepository.updateStatus(
+      id,
+      status as any,
+    );
 
     // If order is completed and has a transaction, update transaction too
     if (status === "COMPLETED") {
