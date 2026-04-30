@@ -149,7 +149,7 @@ export class OrderController {
 
   getOrderByNumber = async (req: Request, res: Response) => {
     const { orderNumber } = req.params;
-    const order = await this.orderService.getOrderByNumber(orderNumber);
+    const order = await this.orderService.getOrderByNumber(orderNumber as any);
     res.json({
       status: "success",
       data: order,

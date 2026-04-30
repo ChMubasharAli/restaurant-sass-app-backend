@@ -100,7 +100,6 @@ export class PaymentController {
     if (!order) {
       throw new ValidationError("Order not found");
     }
-
     const result = await this.paymentService.processPaymentWithOpaqueData({
       amount: Number(order.totalAmount),
       opaqueDataDescriptor,

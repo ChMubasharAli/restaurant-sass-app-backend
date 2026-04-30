@@ -131,7 +131,7 @@ export class OrderRepository extends BaseRepository {
     try {
       return await this.prisma.order.update({
         where: { id },
-        data: { status },
+        data: { status: status as any },
         include: {
           orderItems: {
             include: {
