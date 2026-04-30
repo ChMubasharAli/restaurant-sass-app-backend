@@ -5,7 +5,6 @@ import {
   ValidationError,
   ConflictError,
 } from "../utils/errors.js";
-import { ReservationStatus } from "../../generated/prisma/enums.js";
 
 export class ReservationService {
   private reservationRepository: ReservationRepository;
@@ -76,7 +75,7 @@ export class ReservationService {
   async cancelReservation(id: number) {
     const reservation = await this.getReservationById(id);
 
-    if (reservation.status === ReservationStatus.ACCEPTED) {
+    if (reservation.status === "ACCEPTED") {
       throw new ValidationError("Cannot cancel a completed reservation");
     }
 
