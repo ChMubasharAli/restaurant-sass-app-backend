@@ -19,7 +19,7 @@ export class OrderService {
   async createOrder(data: CreateOrderDTO) {
     // Validate all menu items exist and are available
     let totalAmount = 0;
-    const orderItemsWithPrices = [];
+    const orderItemsWithPrices: any[] = [];
 
     for (const item of data.items) {
       const menuItem = await this.menuItemRepository.findById(item.menuItemId);

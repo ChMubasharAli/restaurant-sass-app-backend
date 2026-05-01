@@ -1,35 +1,19 @@
 {
   "compilerOptions": {
-    /* File Layout */
-    "rootDir": "./", // Bata raha hai ke source code kahan hai
-    "outDir": "./dist", // Bata raha hai ke compiled files kahan jayengi
-    "paths": {
-      "@/*": ["./src/*"] // Optional: paths simplify karne ke liye
-    },
+    "rootDir": "./",
+    "outDir": "./dist",
 
-    /* Environment Settings */
-    "module": "esnext", // Backend/Fastify ke liye NodeNext behtar hai
+    "module": "esnext",
     "moduleResolution": "bundler",
-    "target": "es2023",
+    "target": "ES2023",
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Output Settings */
-    "sourceMap": true, // Debugging ke liye
-    "declaration": true, // Types generate karne ke liye
-    "declarationMap": true,
-
-    /* Strictness (Aapne false rakha hai, isliye wahi rehne diya) */
-    "strict": false,
     "noImplicitAny": false,
-    "strictNullChecks": false,
+    // "strictPropertyInitialization": false,
 
-    /* Additional Recommended Options */
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "moduleDetection": "force"
+    "sourceMap": true
   },
-  "include": ["src/**/*", "generated/**/*"],
-  "exclude": ["node_modules", "dist", "generated"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

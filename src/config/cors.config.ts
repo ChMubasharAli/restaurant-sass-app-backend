@@ -1,7 +1,11 @@
 import { config } from "./index.js";
 
+const origins = ["http://localhost:5173", config.frontendUrl].filter(
+  (origin): origin is string => !!origin,
+);
+
 export const corsConfig = {
-  origin: ["http://localhost:5173", config.frontendUrl],
+  origin: origins,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
