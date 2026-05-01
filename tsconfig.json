@@ -3,7 +3,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
 
-    "module": "esnext",
+    "module": "preserve",
     "moduleResolution": "bundler",
     "target": "ES2023",
     "strict": true,
