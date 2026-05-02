@@ -7,10 +7,6 @@ datasource db {
   provider = "postgresql"
 }
 
-// ---------------------------
-// Admin Model
-// ---------------------------
-
 model Admin {
   id        Int      @id @default(autoincrement())
   username  String   @unique
@@ -20,9 +16,6 @@ model Admin {
   updatedAt DateTime @updatedAt
 }
 
-// ---------------------------
-// Restaurant Settings
-// ---------------------------
 model RestaurantSettings {
   id                         Int      @id @default(autoincrement())
   name                       String
@@ -38,22 +31,16 @@ model RestaurantSettings {
   updatedAt                  DateTime @updatedAt
 }
 
-// ---------------------------
-// Menu Categories
-// ---------------------------
 model Category {
   id          Int        @id @default(autoincrement())
   name        String     @unique
   description String?
   sortOrder   Int        @default(0)
-  menuItems   MenuItem[]
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
+  menuItems   MenuItem[]
 }
 
-// ---------------------------
-// Menu Items
-// ---------------------------
 model MenuItem {
   id          Int         @id @default(autoincrement())
   name        String
@@ -62,48 +49,33 @@ model MenuItem {
   image       String?
   isAvailable Boolean     @default(true)
   categoryId  Int
-  category    Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-  orderItems  OrderItem[]
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
+  category    Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  orderItems  OrderItem[]
 
   @@index([categoryId])
   @@index([isAvailable])
 }
 
-// ---------------------------
-// Orders
-// ---------------------------
 model Order {
-  id          Int         @id @default(autoincrement())
-  orderNumber String      @unique
-  orderType   OrderType
-  status      OrderStatus @default(PENDING)
-
-  // Customer Information
-  customerName String
-  phoneNumber  String
-
-  // Delivery specific fields
+  id              Int           @id @default(autoincrement())
+  orderNumber     String        @unique
+  orderType       OrderType
+  status          OrderStatus   @default(PENDING)
+  customerName    String
+  phoneNumber     String
   deliveryAddress String?
   deliveryNotes   String?
-
-  // Takeaway specific fields
-  pickupTime DateTime?
-  pickupType PickupType?
-
-  // Payment Information
-  paymentMethod PaymentMethod
-  paymentStatus PaymentStatus @default(PENDING)
-  totalAmount   Decimal       @db.Decimal(10, 2)
-
-  // Timestamps
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // Relations
-  orderItems  OrderItem[]
-  transaction Transaction?
+  pickupTime      DateTime?
+  pickupType      PickupType?
+  paymentMethod   PaymentMethod
+  paymentStatus   PaymentStatus @default(PENDING)
+  totalAmount     Decimal       @db.Decimal(10, 2)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  orderItems      OrderItem[]
+  transaction     Transaction?
 
   @@index([orderNumber])
   @@index([status])
@@ -111,25 +83,20 @@ model Order {
 }
 
 model OrderItem {
-  id         Int     @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   orderId    Int
   menuItemId Int
   quantity   Int
-  unitPrice  Decimal @db.Decimal(10, 2)
-  totalPrice Decimal @db.Decimal(10, 2)
-
-  order    Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  menuItem MenuItem @relation(fields: [menuItemId], references: [id])
-
-  createdAt DateTime @default(now())
+  unitPrice  Decimal  @db.Decimal(10, 2)
+  totalPrice Decimal  @db.Decimal(10, 2)
+  createdAt  DateTime @default(now())
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id])
+  order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
 
   @@index([orderId])
   @@index([menuItemId])
 }
 
-// ---------------------------
-// Reservations
-// ---------------------------
 model Reservation {
   id              Int               @id @default(autoincrement())
   reservationDate DateTime
@@ -147,9 +114,6 @@ model Reservation {
   @@index([status])
 }
 
-// ---------------------------
-// Transactions
-// ---------------------------
 model Transaction {
   id              Int               @id @default(autoincrement())
   orderId         Int               @unique
@@ -159,16 +123,12 @@ model Transaction {
   status          TransactionStatus
   gatewayResponse Json?
   createdAt       DateTime          @default(now())
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  order           Order             @relation(fields: [orderId], references: [id], onDelete: Cascade)
 
   @@index([orderId])
   @@index([transactionId])
 }
 
-// ---------------------------
-// Enums
-// ---------------------------
 enum OrderType {
   DELIVERY
   TAKEAWAY
