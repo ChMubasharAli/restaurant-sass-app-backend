@@ -1,5 +1,5 @@
 import { BaseRepository } from "./base.repository.js";
-import type { CreateOrderDTO, UpdateOrderStatusDTO } from "../dto/order.dto";
+import type { CreateOrderDTO, UpdateOrderStatusDTO } from "../dto/order.dto.js";
 
 export class OrderRepository extends BaseRepository {
   async generateOrderNumber(): Promise<string> {

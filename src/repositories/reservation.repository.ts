@@ -1,5 +1,5 @@
 import { BaseRepository } from "./base.repository.js";
-import type { CreateReservationDTO } from "../dto/reservation.dto";
+import type { CreateReservationDTO } from "../dto/reservation.dto.js";
 
 export class ReservationRepository extends BaseRepository {
   async findAll() {

@@ -2,19 +2,17 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-
-    "module": "preserve",
-    "moduleResolution": "bundler",
+    "module": "NodeNext", // ← Change from "preserve"
+    "moduleResolution": "NodeNext", // ← Change from "bundler"
     "target": "ES2023",
     "strict": true,
+    "allowJs": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
-    // "strictPropertyInitialization": false,
-
     "sourceMap": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/generated/**/*"],
   "exclude": [
     "node_modules",
     "dist",

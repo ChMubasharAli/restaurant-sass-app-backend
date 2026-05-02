@@ -1,4 +1,4 @@
-import type { CreateCategoryDTO, UpdateCategoryDTO } from "../dto/menu.dto";
+import type { CreateCategoryDTO, UpdateCategoryDTO } from "../dto/menu.dto.js";
 import { BaseRepository } from "./base.repository.js";
 
 export class CategoryRepository extends BaseRepository {

@@ -1,4 +1,4 @@
-import type { UpdateRestaurantSettingsDTO } from "../dto/restaurant.dto";
+import type { UpdateRestaurantSettingsDTO } from "../dto/restaurant.dto.js";
 import { BaseRepository } from "./base.repository.js";
 
 export class RestaurantRepository extends BaseRepository {

@@ -1,4 +1,4 @@
-import type { CreateMenuItemDTO, UpdateMenuItemDTO } from "../dto/menu.dto";
+import type { CreateMenuItemDTO, UpdateMenuItemDTO } from "../dto/menu.dto.js";
 import { BaseRepository } from "./base.repository.js";
 export class MenuItemRepository extends BaseRepository {
   async findAll() {
